@@ -1,0 +1,26 @@
+# --- JAVA ---
+*.class
+bin/
+out/
+target/
+
+# --- PYTHON ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+ENV/
+
+# --- IDEs ---
+.idea/
+*.iml
+.settings/
+.project
+.classpath
+.vscode/
+
+# --- ARQUIVOS TEMPORÁRIOS DE TESTE ---
+*_recebida.png
+imagem_recebida.png
