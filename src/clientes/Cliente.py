@@ -11,7 +11,7 @@ def main():
     cliente_socket = None
     try:
         cliente_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        cliente_socket.connect(('?.?.?.?', 12345))
+        cliente_socket.connect(('192.168.68.110', 12345))
 
         print("[Cliente] CONECTADO!!!!!!!")
 

@@ -16,11 +16,11 @@ class MenuCliente:
                 entrada = input("Escolha uma opção: ").strip()
                 opcao = int(entrada)
 
-                if opcao in (1, 2, 3):
+                if opcao in (1, 2, 3, 4):
                     self._realizar_operacao(opcao)
-                elif opcao == 4:
-                    self._solicitar_e_receber_img()
                 elif opcao == 5:
+                    self._solicitar_e_receber_img()
+                elif opcao == 6:
                     self._enviar_mensagem()
                 elif opcao == 0:
                     self._enviar_linha("0")
@@ -39,8 +39,9 @@ class MenuCliente:
         print("1 - OPÇÃO 1-(Somar)")
         print("2 - OPÇÃO 2-(Subtrair)")
         print("3 - OPÇÃO 3-(Multiplicar)")
-        print("4 - OPÇÃO 4-(Imagem Base64)")
-        print("5 - OPÇÃO 5-(Mensagem)")
+        print("4 - OPÇÃO 4-(Dividir)")
+        print("5 - OPÇÃO 5-(Imagem Base64)")
+        print("6 - OPÇÃO 6 -(Mensagem)")
         print("0 - SAIR")
 
     def _enviar_linha(self, texto: str) -> None:
@@ -50,7 +51,7 @@ class MenuCliente:
         return self.socket_file.readline().rstrip('\r\n')
 
     def _solicitar_e_receber_img(self) -> None:
-        self._enviar_linha("4")  # Solicita a imagem ao servidor
+        self._enviar_linha("5")  # Solicita a imagem ao servidor
         print("Solicitando imagem ao servidor...")
 
         resposta_base64 = self._ler_linha()
@@ -67,6 +68,6 @@ class MenuCliente:
 
     def _enviar_mensagem(self) -> None:
         msg = input("Digite a mensagem: ")
-        self._enviar_linha(f"5;{msg}")
+        self._enviar_linha(f"6;{msg}")
         resposta = self._ler_linha()
         print(f"Servidor: {resposta}")

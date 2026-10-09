@@ -22,8 +22,8 @@ def simular_cliente(id_cliente: int) -> None:
         # Pausa de 1 segundo simulando a decisão do usuário no menu
         time.sleep(1)
 
-        # 2. Envio de Mensagem (5;...)
-        msg = f"5;Ola Servidor do Cliente {id_cliente}\n"
+        # 2. Envio de Mensagem (6;...)
+        msg = f"6;Ola Servidor do Cliente {id_cliente}\n"
         s.sendall(msg.encode('utf-8'))
         resposta_msg = socket_file.readline().rstrip('\r\n')
         print(f"[TESTE CLIENTE {id_cliente}] Resposta Mensagem: {resposta_msg}")
